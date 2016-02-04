@@ -1,0 +1,21 @@
+{
+    "name": "macklus/yii2-metadatabehavior",
+    "description": "Simple behavior to use json-like fields on bbdd",
+    "type": "yii2-behavior",
+    "keywords": ["yii2","extension","behavior"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "macklus",
+            "email": "macklus@debianitas.net"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "macklus\\MetaDataBehavior\\": ""
+        }
+    }
+}
