@@ -24,6 +24,7 @@ use yii\db\ActiveRecord;
  *     return [
  *         [
  *             'class' => MetaDataBehavior::className(),
+ *             'attribute' => 'metadata',
  *         ],
  *     ];
  * }
@@ -47,6 +48,7 @@ use yii\db\ActiveRecord;
 class MetaDataBehavior extends Behavior
 {
 
+    public $attribute = 'metadata';
     private $_metaData = [];
 
     public function events()
