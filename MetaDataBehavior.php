@@ -10,6 +10,7 @@ namespace macklus\MetaDataBehavior;
 
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
+use yii\base\InvalidCallException;
 
 /**
  * MetaDataBehavior allow to use one TEXT field on a database as a json data
