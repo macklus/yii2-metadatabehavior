@@ -39,6 +39,7 @@ use yii\base\InvalidCallException;
  * $model = MyModel::find()->where(['id' => 1])->one();
  * $model->setMetaData('keyword1','value1');
  * $model->setMetaData('otherkeyword','anothervalue');
+ * $model->delMetaData('keyword');
  *
  * // Other stuff
  * echo $model->getMetaData('keyword1');
@@ -81,6 +82,13 @@ class MetaDataBehavior extends Behavior
         if ($owner->getIsNewRecord()) {
             throw new InvalidCallException('Call setMetaData is not possible on a new record.');
         }
+        $owner->updateAttributes(["$this->attribute" => json_encode($this->_metaData)]);
+    }
+
+	public function delMetaData($key)
+    {
+        $owner = $this->owner;
+        unset($this->_metaData[$key]);
         $owner->updateAttributes(["$this->attribute" => json_encode($this->_metaData)]);
     }
 }
